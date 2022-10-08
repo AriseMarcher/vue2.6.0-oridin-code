@@ -51,8 +51,11 @@ export function initState (vm: Component) {
   if (opts.props) initProps(vm, opts.props)
   if (opts.methods) initMethods(vm, opts.methods)
   if (opts.data) {
+    // 把data中的成员注入到Vue实例，并且把它转换成响应式的对象
+    // 遍历data中的所有成员，把这些成员注入到Vue实例上
     initData(vm)
   } else {
+    // 响应式处理的入口
     observe(vm._data = {}, true /* asRootData */)
   }
   if (opts.computed) initComputed(vm, opts.computed)

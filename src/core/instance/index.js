@@ -12,10 +12,10 @@ function Vue (options) {
   ) {
     warn('Vue is a constructor and should be called with the `new` keyword')
   }
+  console.log(this)
   // 调用 _init()方法
   this._init(options)
 }
-
 // 注册 vm 的 _init()方法，初始化 vm
 initMixin(Vue)
 // 注册 vm 的 $data/$props/$set/$delete/$watch
